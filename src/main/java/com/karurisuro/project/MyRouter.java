@@ -20,7 +20,7 @@ public class MyRouter extends RouteBuilder {
 
 	@Override
 	public void configure() throws Exception {
-		from("timer:hello?period=2000")
+		from("timer:hello?period={{timerPeroidGreet}}")
 			.routeId("hello")
 			.bean(greet, "greet")
 			.to("stream:out");
